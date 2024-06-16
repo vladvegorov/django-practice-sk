@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" href="{% static '/images/favicon.ico' %}" type="image/x-icon">
+        <script src="{% static '/javascript/display.js' %}"></script>
+        <title>Сколково</title>
+        <link rel='stylesheet' href="{% static '/css/style.css' %}">
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class='header'>
+            <div class='menu'>
+                <img src="{% static '/images/logo.png' %}" style='height: 4em;' onclick='window.location.assign("/");'>
+                <a href='/navigator'>Участники</a>
+                <a href='/grants'>Гранты</a>
+                <a href='/services'>Сервисы</a>
+            </div>
+            <div class='short-menu'>
+                <span class='short-title' onclick='toggleMenu();'>РАЗДЕЛЫ</span>
+                <div id='short-menu-items' class='short-menu-items' style='display: none;'>
+                    <span class='short-item' onclick='window.location.assign("/");'>Главная</span>
+                    <span class='short-item' onclick='window.location.assign("/navigator");'>Участники</span>
+                    <span class='short-item' onclick='window.location.assign("/grants");'>Гранты</span>
+                    <span class='short-item' onclick='window.location.assign("/services");'>Сервисы</span>
+                </div>
+            </div>
+            <div class='user'>
+                {% if user.is_authenticated %}
+                    <a href='/navigator/my_companies'>{{ user.username }}</a>
+                    <a href='/logout'>выйти</a>
+                {% else %}
+                    <a href='/accounts/login'>войти</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class='content'>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

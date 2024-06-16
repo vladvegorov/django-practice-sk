@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class='welcome'>
+        <img src={% static '/images/technopark.jpg' %}>
+        <div class="news">
+            <div class="date">
+                <span>6 июня 2024</span>
+            </div>
+            <p>"Сколково", Минобрнауки и "Национальные приоритеты" объединяют усилия для развития техпредпринимательства</p>
+            <div class="date">
+                <span>6 июня 2024</span>
+            </div>
+            <p>"Сколково" и ДОМ.РФ займутся развитием искусственного интеллекта для строительной отрасли</p>
+            <div class="date">
+                <span>5 июня 2024</span>
+            </div>
+            <p>"Сколково" планирует поиск инновационных решений для wellness-индустрии</p>
+            <div class="date">
+                <span>4 июня 2024</span>
+            </div>
+            <p>Инструменты и сервисы поддержки для стартапов будет подбирать искусственный интеллект</p>
+        </div>
+    </div>
+
+    <div class='card-container'>
+        <div class='block grants'>
+            <span class='title'>Гранты</span>
+            <ul>
+                <li>Внедрение искусственного интеллекта</li>
+                <li>Внедрение цифровых технологий</li>
+                <li>Создание дизайн-центров микроэлектроники</li>
+                <li>Инвестиции бизнес-ангелов</li>
+                <li>Инвестиции в университетские стартапы</li>
+                <li>Микрогранты</li>
+            </ul>
+            <button onclick='window.location.assign("/grants");'>Узнать больше</button>
+        </div>
+        <div class='block services'>
+            <span class='title'>Сервисы</span>
+            <ul>
+                <li>Таможенное декларирование</li>
+                <li>Менторская программа</li>
+                <li>Школа стартапов Skolkovo</li>
+                <li>Экспертиза проектов</li>
+                <li>Зарубежные бизнес-миссии</li>
+                <li>Патентование в РФ и за рубежом</li>
+            </ul>
+            <button onclick='window.location.assign("/services");'>Узнать больше</button>
+        </div>
+    </div>
+{% endblock %}

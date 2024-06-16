@@ -1,0 +1,6 @@
+/practice/.env
+/staticfiles/
+/db.sqlite3
+/venv/
+/.idea/
+/recollect.bat

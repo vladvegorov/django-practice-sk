@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class='login-container'>
+        <h1>Регистрация</h1>
+        <form action='/accounts/signup/' method='post' class="login-form" style="max-width: 35em;">
+            {% csrf_token %}
+            <div style="float: right;">
+                <label for='username'>Логин:</label>
+                <input id='username' name='username' type='text' autocomplete='логин' required autofocus>
+            </div>
+            <div style="float: right;">
+                <label for='password1'>Пароль:</label>
+                <input id='password1' name='password1' type='password' autocomplete='пароль' required>
+            </div>
+            <div style="float: right;">
+                <label for='password2'>Пароль&nbsp;(ещё&nbsp;раз):</label>
+                <input id='password2' name='password2' type='password' autocomplete='пароль' required>
+            </div>
+            <button type='submit'>Зарегистрироваться</button>
+        </form>
+    </div>
+{% endblock %}
